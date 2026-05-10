@@ -21,7 +21,6 @@
         body {
             background-color: #0a0a0a;
             color: #fff;
-            /* Changed background to a dark theme suitable for Instagram vibe or keep generic dark */
             background-image: linear-gradient(45deg, #2c1021, #0a0a0a); 
             background-size: cover;
             background-position: center;
@@ -35,7 +34,6 @@
             align-items: center;
         }
         
-        /* Removed the heavy image overlay, kept a subtle gradient overlay */
         body::before {
             content: '';
             position: absolute;
@@ -78,25 +76,22 @@
             width: auto;
             max-width: 150px;
             height: auto;
-            /* Changed animation name */
             animation: glowLogoInsta 2s infinite alternate;
         }
         
         .logo img {
             width: 100%;
             height: auto;
-            max-height: 60px; /* Adjusted for Insta logo */
+            max-height: 60px;
             object-fit: contain;
         }
         
-        /* Updated Glow Color to Instagram Pink/Purple */
         @keyframes glowLogoInsta {
             0% { filter: drop-shadow(0 0 5px rgba(193, 53, 132, 0.7)); }
             100% { filter: drop-shadow(0 0 20px rgba(225, 48, 108, 1)); }
         }
         
         .language-toggle {
-            /* Instagram Gradient Button */
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
             color: #fff;
             border: none;
@@ -135,7 +130,7 @@
         
         h1 {
             font-size: 22px;
-            color: #E1306C; /* Instagram Pink */
+            color: #E1306C;
             margin-bottom: 15px;
             text-align: left;
         }
@@ -149,26 +144,68 @@
         }
         
         .highlight {
-            color: #C13584; /* Instagram Purple */
+            color: #C13584;
             font-weight: bold;
         }
-        
-        .english-text {
-            display: block;
-        }
-        
-        .hindi-text {
+
+        .text-block {
             display: none;
         }
+
+        /* POPUP STYLES - INSTAGRAM THEME */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            display: none; 
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .popup-box {
+            background: #1a1a1a;
+            border: 2px solid #E1306C;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 90%;
+            width: 500px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(225, 48, 108, 0.4);
+            position: relative;
+        }
+
+        .popup-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .popup-title {
+            color: #E1306C;
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .popup-message {
+            color: #ccc;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
         
-        /* Loading image animation */
         .unlock-image {
             height: 24px;
             width: auto;
             animation: loadingInstaGlow 2s infinite;
         }
         
-        /* Updated Loading Glow */
         @keyframes loadingInstaGlow {
             0% { opacity: 0.7; transform: scale(0.95); filter: drop-shadow(0 0 5px rgba(193, 53, 132, 0.7)); }
             50% { opacity: 1; transform: scale(1.05); filter: drop-shadow(0 0 15px rgba(225, 48, 108, 1)); }
@@ -187,7 +224,7 @@
         
         .countdown-title {
             font-size: 1.3rem;
-            color: #E1306C; /* Instagram Color */
+            color: #E1306C;
             margin-bottom: 10px;
         }
         
@@ -209,7 +246,7 @@
         .countdown-value {
             font-size: 1.8rem;
             font-weight: bold;
-            color: #E1306C; /* Instagram Color */
+            color: #E1306C;
         }
         
         .countdown-label {
@@ -218,7 +255,6 @@
             margin-top: 5px;
         }
         
-        /* Man image with even slower insta glow */
         .man-image-container {
             margin-top: 10px;
             position: relative;
@@ -244,75 +280,37 @@
         }
         
         @media (max-width: 800px) {
-            .container {
-                padding: 15px;
-            }
-            
-            .content {
-                flex-direction: column;
-                text-align: left;
-            }
-            
-            .text-container {
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-            
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .language-toggle {
-                margin-top: 15px;
-                align-self: flex-end;
-            }
-            
-            h1 {
-                font-size: 20px;
-            }
-            
-            p {
-                font-size: 16px;
-            }
-            
-            .countdown-timer {
-                flex-wrap: wrap;
-            }
-            
-            .countdown-box {
-                min-width: 60px;
-            }
-            
-            .countdown-value {
-                font-size: 1.5rem;
-            }
-            
-            .man-image {
-                width: 100%;
-                max-width: 300px;
-            }
+            .container { padding: 15px; }
+            .content { flex-direction: column; text-align: left; }
+            .text-container { margin-right: 0; margin-bottom: 20px; }
+            .header { flex-direction: column; align-items: flex-start; }
+            .language-toggle { margin-top: 15px; align-self: flex-end; }
+            h1 { font-size: 20px; }
+            p { font-size: 16px; }
+            .countdown-timer { flex-wrap: wrap; }
+            .countdown-box { min-width: 60px; }
+            .countdown-value { font-size: 1.5rem; }
+            .man-image { width: 100%; max-width: 300px; }
         }
         
         @media (min-width: 801px) {
-            .man-image {
-                max-width: 500px;
-                height: auto;
-            }
-            
-            .content {
-                justify-content: space-between;
-                min-height: calc(100vh - 200px);
-            }
-            
-            .countdown-container {
-                margin-top: auto;
-                margin-bottom: 20px;
-            }
+            .man-image { max-width: 500px; height: auto; }
+            .content { justify-content: space-between; min-height: calc(100vh - 200px); }
+            .countdown-container { margin-top: auto; margin-bottom: 20px; }
         }
     </style>
 </head>
 <body>
+
+    <!-- FAILURE POPUP -->
+    <div class="popup-overlay" id="failurePopup">
+        <div class="popup-box">
+            <div class="popup-icon">⚠️</div>
+            <div class="popup-title">Process Failed</div>
+            <div class="popup-message" id="popupMessageText"></div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="header">
             <div class="logo">
@@ -323,28 +321,55 @@
         
         <div class="content">
             <div class="text-container">
-                <div class="english-text" id="englishText">
+                
+                <!-- PHASE 1: 7 DAYS -->
+                <div class="text-block" id="englishTextPhase1">
                     <h1>Your Instagram Account Recovery is currently in progress. Please don't worry!</h1>
-                    <p>We have successfully initiated the recovery process for your suspended/disabled <span class="highlight">Instagram ID</span>. The system has received your appeal, and your account is currently under review. 
-                    Typically, accounts are restored instantly, but in your case, it requires a manual check which might take some time. Please wait for 24 to 48 hours, after which your suspension will be lifted.
-                    If, for any reason, it is not restored within this time, it will definitely be recovered within 7 days—this is our promise. In the rare case it doesn't get enabled, you will receive a full refund of the amount you paid. So, please relax.
-                    Thank you for your patience and for being a valued part of the <span class="highlight">Instagram community</span>!</p>
+                    <p>We have successfully initiated the recovery process for your suspended/disabled <span class="highlight">Instagram ID</span>. The system has received your appeal, and your account is currently under review.</p>
+                    <p>Typically, accounts are restored instantly, but in your case, it requires a manual check which takes time. <span class="highlight">Please wait for 7 days.</span></p>
+                    <p>If, for any reason, it is not restored within this time, your amount will be fully refunded. Thank you for your patience and for being a valued part of the Instagram community!</p>
                 </div>
                 
-                <div class="hindi-text" id="hindiText">
+                <div class="text-block" id="hindiTextPhase1">
                     <h1>Aapka Instagram Account Recovery Process shuru ho chuka hai. Kripya chinta na karein!</h1>
-                    <p>Humne aapki suspended/disabled <span class="highlight">Instagram ID</span> ko recover karne ka process shuru kar diya hai. System ne aapki request le li hai aur abhi aapka account review mein hai.
-                    Aam taur par account turant wapas aa jata hai, lekin aapke case mein thoda samay lag sakta hai. Kripya 24 se 48 ghante tak intezar karein, uske baad aapka account wapas chalu ho jayega.
-                    Agar kisi wajah se fir bhi enable nahi hota hai, to yeh pakka 7 din ke andar recover ho jayega—yeh hamara wada hai. Aur agar tab bhi nahi hua, to jitna paisa aapne diya hai, utna pura refund mil jayega. To tension mat lijiye.
-                    Dhanyavad, <span class="highlight">Instagram community</span> par bharosa rakhne ke liye!</p>
+                    <p>Humne aapki suspended/disabled <span class="highlight">Instagram ID</span> ko recover karne ka process shuru kar diya hai. System ne aapki request le li hai aur abhi aapka account review mein hai.</p>
+                    <p>Aam taur par account turant wapas aa jata hai, lekin aapke case mein manual check ki zarurat hai jisme samay lagta hai. <span class="highlight">Kripya 7 din tak intezar karein.</span></p>
+                    <p>Agar kisi wajah se enable nahi hota hai, to jitna paisa aapne diya hai, utna pura refund mil jayega. Instagram community par bharosa rakhne ke liye dhanyavad!</p>
                 </div>
+
+                <!-- PHASE 2: 23 DAYS -->
+                <div class="text-block" id="englishTextPhase2">
+                    <h1>Dear User,</h1>
+                    <p>I am sorry. You waited for 7 days, but the verification process for your <span class="highlight">Instagram Account Recovery</span> is taking longer than expected. <span class="highlight">Please wait for another 23 days.</span> We apologize for this delay.</p>
+                    <p>Rest assured, if your account is not recovered within these additional days, your money will be fully refunded. The timer has been updated to 23 days.</p>
+                </div>
+                
+                <div class="text-block" id="hindiTextPhase2">
+                    <h1>Dear User,</h1>
+                    <p>I am sorry. Aapne 7 din intezaar kiya, lekin <span class="highlight">Instagram Account Recovery</span> ke process mein aur samay lag raha hai. <span class="highlight">Kripya aur 23 din ruk jaaiye.</span> Is deri ke liye humein khed hai.</p>
+                    <p>Yakin maniye, agar in atirikt dino me aapka account recover nahi hota hai, to aapka poora paisa aapko wapas mil jaayega. Timer ab 23 din ke liye set ho gaya hai.</p>
+                </div>
+
+                <!-- PHASE 3: 30 DAYS -->
+                <div class="text-block" id="englishTextPhase3">
+                    <h1>Dear User,</h1>
+                    <p>We deeply apologize for the extended wait. The 23 days have passed, but your account requires a final deep security clearance from Instagram servers. <span class="highlight">Please wait for a final 30 days.</span></p>
+                    <p>This is the final step. If it fails after this period, your refund will be processed immediately.</p>
+                </div>
+                
+                <div class="text-block" id="hindiTextPhase3">
+                    <h1>Dear User,</h1>
+                    <p>Humein is lambe intezaar ke liye bahut khed hai. 23 din guzar chuke hain, lekin aapke account ko Instagram server se final deep security clearance ki zaroorat hai. <span class="highlight">Kripya aakhiri 30 din aur intezaar karein.</span></p>
+                    <p>Ye aakhiri kadam hai. Agar is samay ke baad bhi ye nahi hota hai, to aapka refund turant process kar diya jayega.</p>
+                </div>
+
             </div>
-            
+        
             <div class="countdown-container">
-                <div class="countdown-title">Your account will be recovered in:</div>
+                <div class="countdown-title" id="timerTitle">Processing time remaining:</div>
                 <div class="countdown-timer">
                     <div class="countdown-box">
-                        <div class="countdown-value" id="days">7</div>
+                        <div class="countdown-value" id="days">0</div>
                         <div class="countdown-label">Days</div>
                     </div>
                     <div class="countdown-box">
@@ -374,102 +399,165 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Language toggle functionality
+            // Elements
             const languageToggle = document.getElementById('languageToggle');
-            const englishText = document.getElementById('englishText');
-            const hindiText = document.getElementById('hindiText');
-            
-            let isEnglish = true;
-            
-            languageToggle.addEventListener('click', function() {
-                if (isEnglish) {
-                    // Switch to Hindi
-                    englishText.style.display = 'none';
-                    hindiText.style.display = 'block';
-                    languageToggle.textContent = 'Translate to English';
-                } else {
-                    // Switch to English
-                    englishText.style.display = 'block';
-                    hindiText.style.display = 'none';
-                    languageToggle.textContent = 'Translate to Hindi';
-                }
-                
-                isEnglish = !isEnglish;
-            });
-            
-            // Persistent countdown functionality
             const daysElement = document.getElementById('days');
             const hoursElement = document.getElementById('hours');
             const minutesElement = document.getElementById('minutes');
             const secondsElement = document.getElementById('seconds');
+            const timerTitle = document.getElementById('timerTitle');
+            const failurePopup = document.getElementById('failurePopup');
+            const popupMessageText = document.getElementById('popupMessageText');
+
+            // Text Blocks
+            const enPhase1 = document.getElementById('englishTextPhase1');
+            const hiPhase1 = document.getElementById('hindiTextPhase1');
+            const enPhase2 = document.getElementById('englishTextPhase2');
+            const hiPhase2 = document.getElementById('hindiTextPhase2');
+            const enPhase3 = document.getElementById('englishTextPhase3');
+            const hiPhase3 = document.getElementById('hindiTextPhase3');
             
-            // Generate a unique identifier for this device/browser
-            function generateDeviceId() {
-                // Changed key to match theme update
-                let deviceId = localStorage.getItem('instaDeviceId');
-                if (!deviceId) {
-                    deviceId = 'device_' + Math.random().toString(36).substring(2, 15);
-                    localStorage.setItem('instaDeviceId', deviceId);
+            // State
+            let isEnglish = true;
+            let currentPhase = 1; 
+
+            // --- MULTI-PHASE TIMER LOGIC ---
+            // Timer durations in milliseconds
+            const PHASE_1_DURATION = 7 * 24 * 60 * 60 * 1000;  // 7 Days
+            const PHASE_2_DURATION = 23 * 24 * 60 * 60 * 1000; // 23 Days
+            const PHASE_3_DURATION = 30 * 24 * 60 * 60 * 1000; // 30 Days
+
+            const TOTAL_P1 = PHASE_1_DURATION;
+            const TOTAL_P2 = PHASE_1_DURATION + PHASE_2_DURATION;
+            const TOTAL_P3 = PHASE_1_DURATION + PHASE_2_DURATION + PHASE_3_DURATION;
+
+            // Generate unique ID for Instagram version
+            function getDeviceId() {
+                let id = localStorage.getItem('instaRecTimer_v1');
+                if (!id) {
+                    id = 'user_' + Math.random().toString(36).substr(2, 9);
+                    localStorage.setItem('instaRecTimer_v1', id);
                 }
-                return deviceId;
+                return id;
             }
-            
-            const deviceId = generateDeviceId();
-            
-            // Check if countdown has already started for this device
-            function getCountdownEndTime() {
-                // Changed key to match theme update
-                const savedEndTime = localStorage.getItem(`instaCountdownEnd_${deviceId}`);
-                if (savedEndTime) {
-                    return parseInt(savedEndTime);
+            const deviceId = getDeviceId();
+
+            // Get start time
+            function getStartTime() {
+                let start = localStorage.getItem(`instaStartTime_v1_${deviceId}`);
+                if (!start) {
+                    start = Date.now().toString();
+                    localStorage.setItem(`instaStartTime_v1_${deviceId}`, start);
                 }
-                
-                // If not started yet, set end time to 7 days from now
-                const endTime = Date.now() + (7 * 24 * 60 * 60 * 1000); // 7 days in milliseconds
-                localStorage.setItem(`instaCountdownEnd_${deviceId}`, endTime.toString());
-                return endTime;
+                return parseInt(start);
             }
-            
-            const countdownEndTime = getCountdownEndTime();
-            
-            // Update countdown timer
-            function updateCountdown() {
-                const currentTime = Date.now();
-                const timeRemaining = countdownEndTime - currentTime;
+            const startTime = getStartTime();
+
+            // Update function
+            function updateDisplay() {
+                const now = Date.now();
+                const timePassed = now - startTime;
                 
-                if (timeRemaining <= 0) {
-                    // Countdown finished
-                    daysElement.textContent = '0';
-                    hoursElement.textContent = '0';
-                    minutesElement.textContent = '0';
-                    secondsElement.textContent = '0';
+                let targetTime;
+                let timeLeft;
+                let isComplete = false;
+
+                // Check Phase
+                if (timePassed < TOTAL_P1) {
+                    currentPhase = 1;
+                    targetTime = startTime + TOTAL_P1;
+                    timeLeft = targetTime - now;
+                } else if (timePassed < TOTAL_P2) {
+                    currentPhase = 2;
+                    targetTime = startTime + TOTAL_P2;
+                    timeLeft = targetTime - now;
+                } else if (timePassed < TOTAL_P3) {
+                    currentPhase = 3;
+                    targetTime = startTime + TOTAL_P3;
+                    timeLeft = targetTime - now;
+                } else {
+                    currentPhase = 4; // Finished
+                    timeLeft = 0;
+                    isComplete = true;
+                }
+
+                // Make sure time doesn't go negative
+                if (timeLeft < 0) timeLeft = 0;
+                
+                // Calculate time units
+                const d = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const h = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const m = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const s = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                // Update UI numbers
+                daysElement.textContent = d;
+                hoursElement.textContent = h;
+                minutesElement.textContent = m;
+                secondsElement.textContent = s;
+
+                // Update text visibility
+                updateTextVisibility();
+
+                // Trigger popup if all phases are done
+                if (isComplete) {
+                    showFailurePopup();
+                }
+            }
+
+            // Show Failure Popup Function
+            function showFailurePopup() {
+                failurePopup.style.display = 'flex';
+                if (isEnglish) {
+                    popupMessageText.innerHTML = `I am sorry. Usually, the <b>Instagram Account Recovery</b> process works for everyone, but unfortunately, it could not be completed for your account.<br>We tried very hard, but it's not possible.<br>I am sorry.<br><br><span style="color: #888; font-size: 14px;">Status: Failed</span>`;
+                } else {
+                    popupMessageText.innerHTML = `I am sorry. Aam taur par sabka <b>Instagram Account Recovery</b> ho jata hai, lekin durbhagya se aapka nahi ho paya.<br>Humne bahut koshish ki, par ye sambhav nahi hai.<br>I am sorry.<br><br><span style="color: #888; font-size: 14px;">Status: Failed</span>`;
+                }
+            }
+
+            // Hide/Show Text based on language & phase
+            function updateTextVisibility() {
+                if (currentPhase === 4) {
+                    showFailurePopup(); 
                     return;
                 }
-                
-                // Calculate remaining time
-                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-                
-                // Update the display
-                daysElement.textContent = days;
-                hoursElement.textContent = hours;
-                minutesElement.textContent = minutes;
-                secondsElement.textContent = seconds;
+
+                // Hide all first
+                enPhase1.style.display = 'none';
+                hiPhase1.style.display = 'none';
+                enPhase2.style.display = 'none';
+                hiPhase2.style.display = 'none';
+                enPhase3.style.display = 'none';
+                hiPhase3.style.display = 'none';
+
+                if (currentPhase === 1) {
+                    timerTitle.textContent = "Processing time remaining:";
+                    if (isEnglish) enPhase1.style.display = 'block';
+                    else hiPhase1.style.display = 'block';
+                } else if (currentPhase === 2) {
+                    timerTitle.textContent = "Extended verification time (Phase 2):";
+                    if (isEnglish) enPhase2.style.display = 'block';
+                    else hiPhase2.style.display = 'block';
+                } else if (currentPhase === 3) {
+                    timerTitle.textContent = "Final security check (Phase 3):";
+                    if (isEnglish) enPhase3.style.display = 'block';
+                    else hiPhase3.style.display = 'block';
+                }
             }
-            
-            // Initial update
-            updateCountdown();
-            
-            // Update countdown every second
-            setInterval(updateCountdown, 1000);
-            
-            // Disable right-click
-            document.addEventListener('contextmenu', function(e) {
-                e.preventDefault();
-                return false;
+
+            // Language Toggle click event
+            languageToggle.addEventListener('click', function() {
+                isEnglish = !isEnglish;
+                languageToggle.textContent = isEnglish ? 'Translate to Hindi' : 'Translate to English';
+                updateTextVisibility(); 
             });
+
+            // Start loop
+            setInterval(updateDisplay, 1000);
+            updateDisplay(); 
+
+            // Disable right click
+            document.addEventListener('contextmenu', e => e.preventDefault());
         });
     </script>
 </body>
